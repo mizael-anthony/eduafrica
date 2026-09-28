@@ -217,6 +217,7 @@ export default function Home() {
               <div className="sm:hidden"><p className="font-display text-lg text-[#202A55]">{activeSection}</p></div>
             </div>
             <div className="flex items-center gap-2 md:gap-5">
+              <span className="hidden rounded-full border border-[#E7D7B7] bg-[#FFF3D5] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#9A6A16] lg:inline-flex">Démo · données fictives</span>
               <button className="hidden items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-[#766E63] transition hover:bg-[#EEE7DD] md:flex" onClick={() => toast.info("Le centre d’aide sera bientôt disponible.")}><Search className="h-4 w-4" /> Rechercher</button>
               <button className="relative rounded-xl p-2.5 text-[#766E63] transition hover:bg-[#EEE7DD]" onClick={() => toast.info("Vous êtes à jour, aucune nouvelle notification.")} aria-label="Notifications"><Bell className="h-[18px] w-[18px]" /><span className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-[#D46143]" /></button>
               <div className="h-7 w-px bg-[#E3DACD]" />
@@ -230,7 +231,7 @@ export default function Home() {
           <div className="mx-auto max-w-[1480px] px-5 py-7 md:px-10 md:py-10">
             <section className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
               <div>
-                <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#D46143]"><span className="h-2 w-2 rounded-full bg-[#D46143]" /> Mercredi 28 septembre 2026</p>
+                <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#D46143]"><span className="h-2 w-2 rounded-full bg-[#D46143]" /> Mercredi 28 septembre 2026 · aperçu client</p>
                 <h1 className="font-display text-4xl leading-[1.05] tracking-[-0.03em] text-[#202A55] md:text-5xl">Bonjour, Aïcha.</h1>
                 <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#766E63]">Voici ce qui se passe à <span className="font-bold text-[#202A55]">{selectedSchool.name}</span> aujourd’hui.</p>
               </div>
@@ -293,7 +294,7 @@ export default function Home() {
               <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">{quickModules.map((module) => { const Icon = module.icon; const tone = { coral: { bg: "#FFF0E9", color: "#D46143" }, indigo: { bg: "#E9ECF8", color: "#3C4D93" }, gold: { bg: "#FFF3D5", color: "#B07818" }, green: { bg: "#E4F1EB", color: "#2B8064" } }[module.tone as "coral" | "indigo" | "gold" | "green"]; return <button key={module.label} className="group flex items-center gap-4 rounded-2xl border border-[#E7E0D5] bg-[#FFFDF9] p-4 text-left transition hover:-translate-y-0.5 hover:border-[#D6C8B8] hover:shadow-[0_10px_22px_rgba(47,40,29,0.07)]" onClick={() => handleNav(module.label)}><span className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ backgroundColor: tone.bg, color: tone.color }}><Icon className="h-5 w-5 transition group-hover:scale-110" /></span><span className="min-w-0"><span className="block font-bold text-[#202A55]">{module.label}</span><span className="mt-1 block text-xs text-[#9A8E80]">{module.detail}</span></span><ArrowUpRight className="ml-auto h-4 w-4 text-[#B7AC9E] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#D46143]" /></button>; })}</div>
             </section>
 
-            <footer className="mt-10 flex flex-col justify-between gap-3 border-t border-[#E7E0D5] py-6 text-xs text-[#9A8E80] sm:flex-row"><p>EduAfrica · Pour des écoles qui font grandir l’avenir.</p><div className="flex gap-4"><button onClick={() => toast.info("Centre d’aide bientôt disponible.")}>Centre d’aide</button><button onClick={() => toast.info("La documentation arrive bientôt.")}>Documentation</button></div></footer>
+            <footer className="mt-10 flex flex-col justify-between gap-3 border-t border-[#E7E0D5] py-6 text-xs text-[#9A8E80] sm:flex-row"><p>EduAfrica · Démonstration avec données fictives · Pour des écoles qui font grandir l’avenir.</p><div className="flex gap-4"><button onClick={() => toast.info("Centre d’aide bientôt disponible.")}>Centre d’aide</button><button onClick={() => toast.info("La documentation arrive bientôt.")}>Documentation</button></div></footer>
           </div>
         </main>
       </div>
